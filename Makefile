@@ -9,7 +9,7 @@ compose-build:
 	docker-compose build
 
 code-lint:
-	# java -jar /opt/checkstyle.jar -c checkstyle.xml modules src
+	luacheck modules
 
 # compile:
 	# @(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)

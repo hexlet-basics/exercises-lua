@@ -8,4 +8,9 @@ theory: |
     Hello, World!
   </pre>
 
+instructions: |
+
+  ```lua
+  print("Hello World")
+  ```
 

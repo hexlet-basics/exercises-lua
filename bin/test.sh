@@ -1,1 +1,1 @@
-jest
+busted test.lua
