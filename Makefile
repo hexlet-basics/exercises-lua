@@ -11,15 +11,14 @@ compose-build:
 code-lint:
 	luacheck modules
 
-# compile:
-	# @(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
-
-# clean:
-#   @$$(find . -type f -name *.class -delete)
-
 compose-bash:
-	docker-compose run exercises bash
+	docker-compose run --rm exercises bash
 
 compose-test:
-	docker-compose run exercises make test
+	docker-compose run --rm exercises make test
 
+compose-code-lint:
+	docker-compose run --rm exercises make code-lint
+
+compose-clear:
+	docker-compose down -v
