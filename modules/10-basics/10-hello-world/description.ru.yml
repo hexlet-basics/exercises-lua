@@ -11,6 +11,5 @@ theory: |
 instructions: |
 
   ```lua
-  print("Hello World")
+  print("Hello World!")
   ```
-

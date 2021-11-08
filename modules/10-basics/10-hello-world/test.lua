@@ -7,6 +7,6 @@ describe('should be awesome', function()
 
 		local s = f:read('*a')
 		print(s)
-		assert.equals('Hello World', string.trim(s))
+		assert.equals('Hello World!', string.trim(s))
 	end)
 end)
