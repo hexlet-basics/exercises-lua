@@ -2,9 +2,9 @@
 
 [![Github Actions Status](../../workflows/Docker/badge.svg)](../../actions)
 
-### Участие
+### How to contribute
 
-* Обсуждение в канале #hexlet-volunteers слака http://slack-ru.hexlet.io
+* Discussions at #hexlet-volunteers Slack channel http://slack.hexlet.io
 
 ## Develop
 
@@ -24,9 +24,9 @@ $ make compose-schema-validate
 ```
 
 ##
-[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=exercises-typescript)
+[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=exercises-typescript)
 
-This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=exercises-typescript).
+This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet](https://hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=exercises-typescript).
 ##
 
 See most active contributers on [hexlet-friends](https://friends.hexlet.io/).
