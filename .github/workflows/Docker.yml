@@ -11,18 +11,17 @@ env:
   REGISTRY_NAME: hexletbasics
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run tests
         run: |
-          docker-compose --file docker-compose.test.yml build
-          docker-compose --file docker-compose.test.yml run sut
+          docker-compose --file docker-compose.override.yml build
   build-push-notify:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: build-test
+    needs: build
     steps:
       - uses: actions/checkout@v2
       - name: Set repository name
