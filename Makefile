@@ -20,5 +20,10 @@ compose-test:
 compose-code-lint:
 	docker-compose run --rm exercises make code-lint
 
-compose-clear:
-	docker-compose down -v
+compose-down:
+	docker-compose down -v --remove-orphans
+
+ci-check:
+	docker-compose -f docker-compose.yml down -v --remove-orphanss
+	docker-compose --file docker-compose.yml build
+	docker-compose --file docker-compose.yml up --abort-on-container-exit

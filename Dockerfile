@@ -1,15 +1,19 @@
 FROM hexletbasics/base-image:latest
 
-RUN apt-get update && apt-get install -y lua5.4 luarocks
-RUN rm /usr/bin/lua
-RUN ln -s /usr/bin/lua5.4 /usr/bin/lua
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -yqq --no-install-recommends \
+        lua5.4 luarocks \
+  && rm -f /usr/bin/lua \
+  && ln -s /usr/bin/lua5.4 /usr/bin/lua \
+  && rm -rf /var/lib/apt/lists/*
 
-RUN luarocks install busted
-RUN luarocks install stdlib
-RUN luarocks install luacheck
+  # Установка необходимых luarocks-пакетов
+  RUN luarocks install busted \
+  && luarocks install stdlib \
+  && luarocks install luacheck
 
 WORKDIR /exercises-lua
 
 COPY . .
 
-ENV PATH /exercises-lua/bin:$PATH
+ENV PATH=/exercises-lua/bin:$PATH
