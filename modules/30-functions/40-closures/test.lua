@@ -1,0 +1,11 @@
+local test = require('test_helper')
+
+local make_counter = test.load_function()
+local first = make_counter(5)
+local second = make_counter(10)
+test.equal(6, first())
+test.equal(7, first())
+test.equal(11, second())
+test.equal(8, first())
+test.equal(12, second())
+test.equal(0, make_counter(-1)())

@@ -2,15 +2,12 @@ FROM hexletbasics/base-image:latest
 
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -yqq --no-install-recommends \
-        lua5.4 luarocks \
+        lua5.4 liblua5.4-dev luarocks build-essential \
   && rm -f /usr/bin/lua \
   && ln -s /usr/bin/lua5.4 /usr/bin/lua \
   && rm -rf /var/lib/apt/lists/*
 
-  # Установка необходимых luarocks-пакетов
-  RUN luarocks install busted \
-  && luarocks install stdlib \
-  && luarocks install luacheck
+RUN luarocks --lua-version=5.4 install luacheck
 
 WORKDIR /exercises-lua
 

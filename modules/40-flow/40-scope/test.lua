@@ -1,0 +1,11 @@
+local test = require('test_helper')
+
+local scoped_value, environment = test.load_function()
+local inner, outer = scoped_value(10)
+test.equal(15, inner)
+test.equal(10, outer)
+inner, outer = scoped_value(-5)
+test.equal(0, inner)
+test.equal(-5, outer)
+test.equal(nil, rawget(environment, 'inner'))
+test.equal(nil, rawget(environment, 'value'))
