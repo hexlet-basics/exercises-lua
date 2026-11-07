@@ -7,7 +7,7 @@ RUN apt-get update \
   && ln -s /usr/bin/lua5.4 /usr/bin/lua \
   && rm -rf /var/lib/apt/lists/*
 
-RUN luarocks --lua-version=5.4 install luacheck
+RUN luarocks --lua-version=5.4 install luacheck LUA_INCDIR=/usr/include/lua5.4
 
 WORKDIR /exercises-lua
 
