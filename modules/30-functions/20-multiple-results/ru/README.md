@@ -19,9 +19,17 @@ local function divide(value, divisor)
     return value // divisor, value % divisor
 end
 
-print(divide(17, 5)) -- 3 and 2, separated by a tab
-print(divide(17, 5), 'done') -- 3 and done
-print((divide(17, 5))) -- 3
+print(divide(17, 5))
+print(divide(17, 5), 'done')
+print((divide(17, 5)))
+```
+
+`print` разделяет несколько аргументов табуляцией.
+
+```text
+3       2
+3       done
+3
 ```
 
 В первом вызове `print` получает оба результата. Во втором после вызова есть ещё выражение, поэтому от `divide` остаётся только первый результат. Скобки вокруг самого вызова тоже сворачивают результаты до одного.

@@ -19,11 +19,19 @@ print(arguments[2]) -- nil
 
 `ipairs` остановится на второй позиции. Чтобы обработать все переданные позиции, нужен числовой цикл от `1` до `arguments.n`. Функция `select('#', ...)` тоже возвращает количество аргументов, включая `nil`.
 
+```lua
+print(select('#', 'first', nil, 'third')) -- 3
+```
+
 Для обратного преобразования таблицы в несколько значений используется `table.unpack`. Явные границы сохраняют позиции, которые содержат `nil`.
 
 ```lua
 local arguments = table.pack('first', nil, 'third')
 print(table.unpack(arguments, 1, arguments.n))
+```
+
+```text
+first   nil     third
 ```
 
 Без явной конечной границы `table.unpack` использует `#`, что не подходит таблице с пропусками. Используйте пару `table.pack` и `table.unpack(arguments, 1, arguments.n)`, когда важно передать набор аргументов без потерь.
