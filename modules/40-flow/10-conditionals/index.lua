@@ -1,5 +1,9 @@
 local function classify(number)
 -- BEGIN
+    if number == nil then
+        return 'missing'
+    end
+
     if number < 0 then
         return 'negative'
     elseif number == 0 then
