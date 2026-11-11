@@ -1,6 +1,6 @@
 local test = {}
 
-assert(_VERSION == 'Lua 5.4', 'These exercises require Lua 5.4, got ' .. _VERSION)
+assert(_VERSION == 'Lua 5.5', 'These exercises require Lua 5.5, got ' .. _VERSION)
 
 -- Stop accidental infinite loops in a submitted solution.
 debug.sethook(function()
